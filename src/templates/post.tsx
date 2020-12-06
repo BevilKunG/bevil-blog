@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import { graphql } from 'gatsby'
+import { Layout } from '../components'
 
 interface PostProp {
   data: any
@@ -8,15 +9,23 @@ interface PostProp {
 const Post: FC<PostProp> = ({ data }) => {
   const post = data.ghostPost
   return (
-    <>
-      <article className="mx-5">
-        {post.feature_image ? (
-          <img src={post.feature_image} alt={post.title} />
-        ) : null}
-        <h1>{post.title}</h1>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
-      </article>
-    </>
+    <Layout>
+      <div className="container">
+        <article className="content">
+          {post.feature_image ? (
+            <figure className="post-feature-image">
+              <img src={post.feature_image} alt={post.title} />
+            </figure>
+          ) : null}
+
+          <section className="post-full-content">
+            <h1 className="content-title">{post.title}</h1>
+
+            <section className="content-body" dangerouslySetInnerHTML={{ __html: post.html }} />
+          </section>
+        </article>
+      </div>
+    </Layout>
   )
 }
 

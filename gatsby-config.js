@@ -38,7 +38,13 @@ module.exports = {
         contentApiKey: process.env.GHOST_CONTENT_API_KEY,
       },
     },
-    `gatsby-plugin-postcss`
+    `gatsby-plugin-postcss`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GA_TRACKING_ID,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
