@@ -6,11 +6,10 @@ interface PostProp {
 }
 
 const Post: FC<PostProp> = ({ data }) => {
-    console.log(data)
   const post = data.ghostPost
   return (
     <>
-      <article>
+      <article className="mx-5">
         {post.feature_image ? (
           <img src={post.feature_image} alt={post.title} />
         ) : null}
