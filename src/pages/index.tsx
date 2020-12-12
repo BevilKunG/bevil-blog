@@ -1,14 +1,40 @@
 import React, { FC } from 'react'
-import { Layout } from '../components'
+import { Layout, HighlightCard } from '../components'
+import { graphql } from 'gatsby'
 
-const Index: FC = () => {
+interface IndexProp {
+  data: any
+}
+
+const Index: FC<IndexProp> = ({ data }) => {
+  const { allGhostPost } = data
+  const highlightPost = allGhostPost.edges[0]
+
   return (
     <Layout>
-      <div className="flex flex-col justify-center items-center h-screen">
-        <h1 className="text-6xl text-center">Coming Soon</h1>
-      </div>
+      <HighlightCard post={highlightPost.node} />
     </Layout>
   )
 }
 
 export default Index
+
+export const postsQuery = graphql`
+  query {
+    allGhostPost(sort: { fields: published_at, order: DESC }) {
+      edges {
+        node {
+          id
+          title
+          feature_image
+          published_at
+          slug
+          primary_author {
+            id
+            name
+          }
+        }
+      }
+    }
+  }
+`
