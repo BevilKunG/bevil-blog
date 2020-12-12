@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Layout, HighlightCard } from '../components'
+import { Layout, HighlightCard, Card } from '../components'
 import { graphql } from 'gatsby'
 
 interface IndexProp {
@@ -16,6 +16,15 @@ const Index: FC<IndexProp> = ({ data }) => {
 
       <div className="px-16 mt-14">
         <h1 className="text-gray-900 text-3xl font-bold">Story</h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
+          <Card post={highlightPost.node} />
+          <Card post={highlightPost.node} />
+          <Card post={highlightPost.node} />
+          <Card post={highlightPost.node} />
+          <Card post={highlightPost.node} />
+          <Card post={highlightPost.node} />
+        </div>
       </div>
     </Layout>
   )
