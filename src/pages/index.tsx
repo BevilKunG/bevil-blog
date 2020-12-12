@@ -13,6 +13,10 @@ const Index: FC<IndexProp> = ({ data }) => {
   return (
     <Layout>
       <HighlightCard post={highlightPost.node} />
+
+      <div className="px-16 mt-14">
+        <h1 className="text-gray-900 text-3xl font-bold">Story</h1>
+      </div>
     </Layout>
   )
 }

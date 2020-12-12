@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Navbar } from './'
+import { Navbar, Footer } from './'
 // import '../styles/app.css'
 
 const Layout: FC = ({ children }) => {
@@ -7,6 +7,7 @@ const Layout: FC = ({ children }) => {
     <div>
       <Navbar />
       <div className="w-screen h-screen">{children}</div>
+      <Footer />
     </div>
   )
 }
