@@ -1,9 +1,14 @@
 import React, { FC } from 'react'
 import { navigate } from 'gatsby'
+import styled from 'styled-components'
 
 interface HighlightCardProp {
   post: any
 }
+
+const Container = styled.div`
+  height: 75vh;
+`
 
 const HighlightCard: FC<HighlightCardProp> = ({ post }) => {
   const onCardClick = () => {
@@ -11,7 +16,10 @@ const HighlightCard: FC<HighlightCardProp> = ({ post }) => {
   }
 
   return (
-    <div className="w-full h-3/4 relative cursor-pointer" onClick={onCardClick}>
+    <Container
+      className="w-full relative cursor-pointer"
+      onClick={onCardClick}
+    >
       <img
         src={post.feature_image}
         alt={post.title}
@@ -24,7 +32,7 @@ const HighlightCard: FC<HighlightCardProp> = ({ post }) => {
           <p className="text-xl font-medium">{post.primary_author.name}</p>
         </div>
       </div>
-    </div>
+    </Container>
   )
 }
 

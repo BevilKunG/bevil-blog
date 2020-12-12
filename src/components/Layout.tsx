@@ -6,7 +6,7 @@ const Layout: FC = ({ children }) => {
   return (
     <div>
       <Navbar />
-      <div className="w-screen h-screen">{children}</div>
+      <div className="w-screen min-h-screen">{children}</div>
       <Footer />
     </div>
   )
