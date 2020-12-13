@@ -32,10 +32,11 @@ const SEO: FC<SEOProp> = ({ title, description, image }) => {
         { name: 'description', content: metaDescription },
         { property: 'og:type', content: 'website' },
         { property: 'og:title', content: metaTitle },
-        { name: 'og:description', content: metaDescription },
-        { property: 'og:image', content: metaImage },
+        { property: 'og:description', content: metaDescription },
       ]}
-    />
+    >
+      <meta property="og:image" content={metaImage} />
+    </Helmet>
   )
 }
 
