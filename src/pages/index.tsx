@@ -18,12 +18,9 @@ const Index: FC<IndexProp> = ({ data }) => {
         <h1 className="text-gray-900 text-3xl font-bold">Story</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
-          <Card post={highlightPost.node} />
-          <Card post={highlightPost.node} />
-          <Card post={highlightPost.node} />
-          <Card post={highlightPost.node} />
-          <Card post={highlightPost.node} />
-          <Card post={highlightPost.node} />
+          {allGhostPost.edges.map(({ node }: any) => (
+            <Card key={node.id} post={node} />
+          ))}
         </div>
       </div>
     </Layout>
@@ -40,6 +37,7 @@ export const postsQuery = graphql`
           id
           title
           feature_image
+          excerpt
           published_at
           slug
           primary_author {

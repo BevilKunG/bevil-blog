@@ -11,16 +11,21 @@ const Card: FC<CardProp> = ({ post }) => {
   }
 
   return (
-    <div className="rounded-lg shadow-lg cursor-pointer" onClick={onCardClick}>
+    <div
+      className="rounded-lg shadow-lg cursor-pointer hover:opacity-80"
+      onClick={onCardClick}
+    >
       <img
         src={post.feature_image}
         alt={post.title}
         className="object-cover rounded-t-lg"
       />
 
-      <div className="px-6 py-10">
-        <h1 className="text-xl font-semibold">{post.title}</h1>
-        <p className="text-md font-medium">{post.primary_author.name}</p>
+      <div className="h-32 flex flex-col justify-center pl-8">
+        <div>
+          <h1 className="text-2xl font-semibold">{post.title}</h1>
+          <p className="text-md mt-1">{post.excerpt}</p>
+        </div>
       </div>
     </div>
   )

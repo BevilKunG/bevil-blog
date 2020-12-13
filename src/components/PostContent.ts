@@ -516,46 +516,26 @@ const PostContent = styled.div`
 
     .content-body h1 {
       margin: 1em 0 0.5em 0;
-      font-size: 3.4rem;
+      font-size: 2.25rem;
       font-weight: 700;
-    }
-    @media (max-width: 500px) {
-      .content-body h1 {
-        font-size: 2.8rem;
-      }
     }
 
     .content-body h2 {
       margin: 0.8em 0 0.4em 0;
-      font-size: 3.2rem;
+      font-size: 2rem;
       font-weight: 700;
-    }
-    @media (max-width: 500px) {
-      .content-body h2 {
-        font-size: 2.6rem;
-      }
     }
 
     .content-body h3 {
       margin: 0.5em 0 0.2em 0;
-      font-size: 2.8rem;
+      font-size: 1.5rem;
       font-weight: 700;
-    }
-    @media (max-width: 500px) {
-      .content-body h3 {
-        font-size: 2.2rem;
-      }
     }
 
     .content-body h4 {
       margin: 0.5em 0 0.2em 0;
-      font-size: 2.4rem;
+      font-size: 1rem;
       font-weight: 700;
-    }
-    @media (max-width: 500px) {
-      .content-body h4 {
-        font-size: 2.2rem;
-      }
     }
 
     .content-body h5 {
@@ -573,7 +553,7 @@ const PostContent = styled.div`
 
     .content-body h6 {
       margin: 0.5em 0 0.2em 0;
-      font-size: 2rem;
+      font-size: 0.5rem;
       font-weight: 700;
     }
 
@@ -592,6 +572,10 @@ const PostContent = styled.div`
       background: var(--color-base);
       color: #fff;
       border-radius: 12px;
+    }
+
+    .content-body figcaption {
+      font-size: 1rem;
     }
 
     /* Koenig Styles */

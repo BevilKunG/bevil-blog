@@ -19,6 +19,7 @@
     "gatsby-source-filesystem": "^2.5.0",
     "gatsby-source-ghost": "^4.2.2",
     "gatsby-transformer-sharp": "^2.6.0",
+    "luxon": "^1.25.0",
     "postcss": "^8.1.14",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
@@ -28,6 +29,7 @@
     "tailwindcss": "^2.0.1"
   },
   "devDependencies": {
+    "@types/luxon": "^1.25.0",
     "@types/styled-components": "^5.1.5",
     "dotenv": "^8.2.0",
     "prettier": "2.1.2",

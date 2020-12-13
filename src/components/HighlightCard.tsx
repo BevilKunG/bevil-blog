@@ -17,7 +17,7 @@ const HighlightCard: FC<HighlightCardProp> = ({ post }) => {
 
   return (
     <Container
-      className="w-full relative cursor-pointer"
+      className="w-full relative cursor-pointer hover:opacity-80"
       onClick={onCardClick}
     >
       <img
