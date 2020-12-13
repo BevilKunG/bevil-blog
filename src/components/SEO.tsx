@@ -33,10 +33,9 @@ const SEO: FC<SEOProp> = ({ title, description, image }) => {
         { property: 'og:type', content: 'website' },
         { property: 'og:title', content: metaTitle },
         { property: 'og:description', content: metaDescription },
+        { property: 'og:image', content: metaImage },
       ]}
-    >
-      <meta property="og:image" content={metaImage} />
-    </Helmet>
+    />
   )
 }
 
