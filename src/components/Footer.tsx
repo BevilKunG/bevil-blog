@@ -17,7 +17,9 @@ const Footer: FC = () => {
   return (
     <div className="w-screen h-32 bg-gray-900 text-white flex flex-col justify-center items-center">
       <div>
-  <h1 className="text-xl font-bold">&copy; {`2020 ${siteMetadata.title}`}</h1>
+        <h1 className="text-xl font-bold">
+          &copy; {`2020 ${siteMetadata.title}`}
+        </h1>
       </div>
     </div>
   )

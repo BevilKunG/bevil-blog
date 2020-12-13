@@ -1,29 +1,39 @@
 import React, { FC } from 'react'
 import { graphql } from 'gatsby'
-import { Layout } from '../components'
+import { Layout, PostContent } from '../components'
+import styled from 'styled-components'
 
 interface PostProp {
   data: any
 }
 
+const FeatureImage = styled.figure`
+  & img {
+    height: 500px;
+  }
+`
+
 const Post: FC<PostProp> = ({ data }) => {
   const post = data.ghostPost
+
   return (
     <Layout>
-      <div className="container">
-        <article className="content">
-          {post.feature_image ? (
-            <figure className="post-feature-image">
-              <img src={post.feature_image} alt={post.title} />
-            </figure>
-          ) : null}
+      <div className="max-w-screen-lg mx-auto px-16">
+          <article className="mx-auto text-xl">
+            {post.feature_image ? (
+              <FeatureImage>
+                <img src={post.feature_image} alt={post.title} className="w-full mb-12 object-cover" />
+              </FeatureImage>
+            ) : null}
 
-          <section className="post-full-content">
-            <h1 className="content-title">{post.title}</h1>
+            <section className="max-w-screen-md mx-auto bg-white">
+              <h1 className="text-7xl mb-4">{post.title}</h1>
 
-            <section className="content-body" dangerouslySetInnerHTML={{ __html: post.html }} />
-          </section>
-        </article>
+              <PostContent>
+                <section className="content-body" dangerouslySetInnerHTML={{ __html: post.html }} />
+              </PostContent>
+            </section>
+          </article>
       </div>
     </Layout>
   )

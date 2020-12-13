@@ -1,6 +1,5 @@
 import React, { FC } from 'react'
 import { Navbar, Footer } from './'
-// import '../styles/app.css'
 
 const Layout: FC = ({ children }) => {
   return (
