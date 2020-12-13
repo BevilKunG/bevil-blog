@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Layout, HighlightCard, Card } from '../components'
+import { SEO, Layout, HighlightCard, Card } from '../components'
 import { graphql } from 'gatsby'
 
 interface IndexProp {
@@ -12,6 +12,8 @@ const Index: FC<IndexProp> = ({ data }) => {
 
   return (
     <Layout>
+      <SEO />
+
       <HighlightCard post={highlightPost.node} />
 
       <div className="px-16 mt-14">

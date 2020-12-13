@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { graphql } from 'gatsby'
-import { Layout, PostContent } from '../components'
+import { SEO, Layout, PostContent } from '../components'
 import styled from 'styled-components'
 import { DateTime } from 'luxon'
 
@@ -23,6 +23,8 @@ const Post: FC<PostProp> = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title={post.og_title} description={post.og_description} image={post.og_image} />
+    
       <div className="max-w-screen-lg mx-auto px-16">
         <article className="mx-auto">
           {post.feature_image ? (
@@ -64,6 +66,9 @@ export const postQuery = graphql`
       feature_image
       html
       published_at
+      og_title
+      og_description
+      og_image
     }
   }
 `
