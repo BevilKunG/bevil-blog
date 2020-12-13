@@ -32,7 +32,7 @@ const SEO: FC<SEOProp> = ({ title, description, image }) => {
         { name: 'description', content: metaDescription },
         { property: 'og:type', content: 'website' },
         { property: 'og:title', content: metaTitle },
-        { property: 'og:description', content: metaDescription },
+        { name: 'og:description', content: metaDescription },
         { property: 'og:image', content: metaImage },
       ]}
     />
